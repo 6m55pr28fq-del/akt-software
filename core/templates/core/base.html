@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>AKT Software</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- SEO -->
+    <meta name="description" content="AKT Software — разработка сайтов и мобильных приложений в Казахстане.">
+    <meta name="keywords" content="AKT Software, разработка сайтов, мобильные приложения, Казахстан, Актау, Django, Flutter">
+
+    <style>
+        /* =====================
+           GLOBAL STYLES
+        ====================== */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #ffffff;
+            color: #111;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* =====================
+           NAVBAR
+        ====================== */
+        .navbar {
+            background: #0f172a;
+            padding: 15px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .nav-links a {
+            color: #cbd5e1;
+            margin-left: 15px;
+            font-size: 14px;
+        }
+
+        .nav-links a:hover {
+            color: white;
+        }
+
+        .active {
+            color: white !important;
+            font-weight: bold;
+        }
+
+        /* =====================
+           LAYOUT
+        ====================== */
+        .container {
+            padding: 20px;
+            min-height: 80vh;
+        }
+
+        /* =====================
+           FOOTER
+        ====================== */
+        footer {
+            background: #111827;
+            color: #fff;
+            text-align: center;
+            padding: 25px;
+            font-size: 14px;
+
+        }
+
+        /* =====================
+           BUTTONS
+        ====================== */
+        .btn {
+            background: #0f172a;
+            color: white;
+            padding: 10px 16px;
+            border-radius: 6px;
+            display: inline-block;
+        }
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+        /* =====================
+           RESPONSIVE
+        ====================== */
+        @media (max-width: 600px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .nav-links {
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- =====================
+     NAVBAR
+====================== -->
+<div class="navbar">
+
+    <!-- LOGO -->
+    <div class="logo">
+        AKT Software
+    </div>
+
+    <!-- NAV LINKS -->
+    <div class="nav-links">
+
+        <!-- RU (default home "/") -->
+        <a href="/"
+           class="{% if request.path == '/' %}active{% endif %}">
+            RU
+        </a>
+
+        <!-- EN -->
+        <a href="/en/"
+           class="{% if '/en/' in request.path %}active{% endif %}">
+            EN
+        </a>
+
+    </div>
+
+</div>
+
+<!-- =====================
+     PAGE CONTENT
+====================== -->
+<div class="container">
+    {% block content %}
+    {% endblock %}
+</div>
+
+<!-- =====================
+     FOOTER
+====================== -->
+<footer>
+    © 2026 AKT Software — Web & Mobile Development in Kazakhstan
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,1 @@
+web: gunicorn AKT_IT_Company.wsgi
